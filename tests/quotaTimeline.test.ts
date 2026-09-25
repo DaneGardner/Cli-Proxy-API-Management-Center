@@ -281,6 +281,28 @@ describe('buildTimelineLane', () => {
     ]);
   });
 
+  test('claude: keeps the weekly lane on the account quota instead of a per-model quota', () => {
+    const accountReset = at(2026, 7, 1, 20);
+    const fableReset = accountReset - 500; // sub-second skew seen from Anthropic
+    const lane = buildTimelineLane({
+      ...base,
+      provider: 'claude',
+      quota: {
+        status: 'success',
+        windows: [
+          { id: 'five-hour', usedPercent: 58, resetAtMs: at(2026, 6, 29, 20), periodHours: 5 },
+          { id: 'seven-day', usedPercent: 38, resetAtMs: accountReset, periodHours: 168 },
+          { id: 'seven-day-fable', usedPercent: 0, resetAtMs: fableReset, periodHours: 168 },
+        ],
+      },
+      maxPeriodHours: 14 * 24,
+    });
+
+    expect(lane.anchorMs).toBe(accountReset);
+    expect(lane.periodHours).toBe(168);
+    expect(lane.remaining).toBe(62);
+  });
+
   test('codex: keeps the weekly lane on the account quota instead of Spark quota', () => {
     const accountReset = at(2026, 7, 1, 20);
     const sparkReset = at(2026, 6, 29, 20);
