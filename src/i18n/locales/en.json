@@ -1318,7 +1318,7 @@
     "empty_desc": "Connect an Antigravity, Claude, Codex, xAI, or Kimi credential to track its quota here.",
     "windows_title": "Quota windows",
     "windows_span_weekly": "two weeks",
-    "windows_span_session": "three days",
+    "windows_span_session": "one day",
     "windows_current": "current",
     "windows_today": "Today",
     "windows_prev": "Previous",

@@ -20,7 +20,7 @@ export type TimelineMode = 'weekly' | 'session';
 
 export const TIMELINE_SPAN_DAYS: Record<TimelineMode, number> = {
   weekly: 14,
-  session: 3,
+  session: 1,
 };
 
 /** The rolling window the session view projects, in hours. */

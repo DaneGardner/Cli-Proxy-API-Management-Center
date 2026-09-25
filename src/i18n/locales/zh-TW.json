@@ -1342,7 +1342,7 @@
     "empty_desc": "接入 Antigravity、Claude、Codex、xAI 或 Kimi 憑證後即可在此查看配額。",
     "windows_title": "配額視窗",
     "windows_span_weekly": "兩週",
-    "windows_span_session": "三天",
+    "windows_span_session": "一天",
     "windows_current": "目前",
     "windows_today": "今天",
     "windows_prev": "上一頁",

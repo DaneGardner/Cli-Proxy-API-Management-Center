@@ -1321,7 +1321,7 @@
     "empty_desc": "Подключите учётные данные Antigravity, Claude, Codex, xAI или Kimi, чтобы отслеживать квоту здесь.",
     "windows_title": "Окна квот",
     "windows_span_weekly": "две недели",
-    "windows_span_session": "три дня",
+    "windows_span_session": "один день",
     "windows_current": "текущий",
     "windows_today": "Сегодня",
     "windows_prev": "Назад",
